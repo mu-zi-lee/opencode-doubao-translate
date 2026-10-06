@@ -3,6 +3,16 @@
 直接使用本人或已获授权的豆包 Cookie 翻译文本，无须部署 doubao-translate2api 服务、Docker 或额外 API Key。
 这是非官方实现，与豆包、Magpie 无隶属或合作关系。服务条款、账号风险及 MIT 免责声明同主项目。
 
+## 项目入口
+
+| 入口 | 用途 |
+| --- | --- |
+| [Magpie 直连插件](https://github.com/mu-zi-lee/opencode-doubao-translate) | 当前插件的发布仓库，可由本机或远端 Magpie 直接安装 |
+| [API 服务源码与部署文档](https://github.com/mu-zi-lee/doubao-translate2api) | 在 NAS 或服务器部署，向多个翻译客户端提供兼容 API |
+| [Docker Hub 镜像](https://hub.docker.com/r/muzileee/doubao-translate2api) | 拉取 `muzileee/doubao-translate2api` 部署 API 服务 |
+
+服务版和插件版共用翻译核心，可按使用场景选择。只在 Magpie 中翻译时安装本插件即可；需要管理页、Cookie 池、API Key 或为多个客户端提供服务时，使用 API 服务或 Docker 镜像。
+
 ## 直接安装（远端也适用）
 
 在 Magpie「插件 → 发现」底部的安装框填写：
