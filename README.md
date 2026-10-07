@@ -1,13 +1,38 @@
-# Doubao Translation for Magpie
+# Magpie Doubao Translate
+
+[简体中文](README.md) | [English](README.en.md)
 
 直接使用本人或已获授权的豆包 Cookie 翻译文本，无须部署 doubao-translate2api 服务、Docker 或额外 API Key。
-这是非官方实现，与豆包、Magpie 无隶属或合作关系。服务条款、账号风险及 MIT 免责声明同主项目。
+
+## 免责声明
+
+本项目是独立的非官方实现，与豆包、Magpie 及其他相关平台不存在隶属或合作关系，也不代表获得其授权、认可或背书。相关名称与商标属于各自权利人。
+
+本项目旨在供学习、研究和开发交流。使用者应自行确认并遵守适用法律法规、相关平台的服务条款及账号使用规则，仅使用本人拥有或已获合法授权的账号与 Cookie，不得用于违法活动或侵害他人权益。
+
+Cookie 属于敏感登录凭证，请妥善保管，不要公开、提交到仓库或分享包含 Cookie 的 `plugin-auth.json`。翻译文本会发送至豆包及其相关翻译服务，提交前请自行确认有权处理该内容，并评估隐私与保密要求。
+
+软件按 [MIT 许可证](LICENSE)以“现状”提供，不保证接口持续可用、翻译准确、账号安全或适用于特定用途。网页接口变更、账号风控或封禁、Cookie 泄露、服务中断、翻译错误及其他使用风险，均由使用者自行评估并承担；重要内容应由使用者核验翻译结果。
+
+在适用法律允许的范围内，作者和贡献者不对使用或无法使用本项目产生的损失、索赔或其他责任负责。下载、安装或使用前，请阅读本声明及 [MIT 许可证](LICENSE)；如无法接受相关风险，请勿使用。
+
+## 合规风险说明
+
+本插件使用 Cookie 自动调用豆包网页翻译接口，不是官方开放 API。本项目未取得或核实平台对此调用方式的专项授权，也不保证这种使用方式符合平台当前的服务条款。以下说明列出需要核实的风险，不表示平台已明确禁止所有此类调用，也不构成对具体使用场景的合法性认定。
+
+- **账号授权不等于接口使用授权。** 即使使用本人账号或已获账号持有人许可的 Cookie，也不代表平台允许自动化访问、批量调用、将网页服务封装为 API 或向第三方提供服务。使用前应核实平台当前关于自动化访问、凭证共享及服务转供的规定。
+- **个人使用和学习研究不自动免除责任。** 免费、开源、低频或仅供个人使用，均不能作为符合服务条款或适用法律的保证。若调用方式不被平台允许，可能面临访问限制、账号停用、服务终止，以及视具体情况产生的合同争议或其他责任。
+- **不要绕过平台限制。** 不应利用本项目绕过验证码、访问控制、付费限制、限流或账号处罚，也不应使用未经授权获取的 Cookie。平台拒绝访问或提出停止要求时，应停止相关调用。
+- **处理文本前需确认权限。** 提交的原文会发送至豆包及其相关翻译服务。涉及他人个人信息、客户资料、公司机密或受版权保护的内容时，应确认具备必要的处理与提交权限，并核实适用的隐私、保密、版权和数据传输要求；将 Cookie 导入远端 Magpie 也应获得相应的凭证保管授权。
+- **商业使用或对外服务需要单独评估。** 将本插件用于收费服务、企业业务或向第三方开放翻译能力前，应核实平台是否允许该用途，并评估授权、数据处理和合同要求。MIT 许可证仅授予本项目代码的使用权限，不授予豆包服务、账号、接口或相关内容的使用权。
+
+本项目的免责声明和 MIT 许可证不能替代平台授权，也不能免除适用法律规定的责任。对合规要求较高的业务，建议选择明确授权该用途的官方 API 或服务，并按实际使用场景取得必要许可。
 
 ## 项目入口
 
 | 入口 | 用途 |
 | --- | --- |
-| [Magpie 直连插件](https://github.com/mu-zi-lee/opencode-doubao-translate) | 当前插件的发布仓库，可由本机或远端 Magpie 直接安装 |
+| [Magpie 直连插件](https://github.com/mu-zi-lee/magpie-doubao-translate) | 当前插件的发布仓库，可由本机或远端 Magpie 直接安装 |
 | [API 服务源码与部署文档](https://github.com/mu-zi-lee/doubao-translate2api) | 在 NAS 或服务器部署，向多个翻译客户端提供兼容 API |
 | [Docker Hub 镜像](https://hub.docker.com/r/muzileee/doubao-translate2api) | 拉取 `muzileee/doubao-translate2api` 部署 API 服务 |
 
@@ -18,19 +43,19 @@
 在 Magpie「插件 → 发现」底部的安装框填写：
 
 ```text
-github:mu-zi-lee/opencode-doubao-translate
+github:mu-zi-lee/magpie-doubao-translate
 ```
 
 点击安装，再进入「已安装」或「供应商」，选择 **Doubao Translation** 的 **Import Doubao Cookie** 登录。
 也可以在运行 Magpie 的机器上使用 CLI：
 
 ```sh
-magpie plugin add github:mu-zi-lee/opencode-doubao-translate
+magpie plugin add github:mu-zi-lee/magpie-doubao-translate
 magpie plugin login doubao-translate
 ```
 
 GitHub 发布仓库包含已构建的插件和运行时依赖，无须 Node.js 开发环境、Docker 或额外构建步骤。
-固定版本时填写 `github:mu-zi-lee/opencode-doubao-translate#v0.1.0`。
+固定版本时填写 `github:mu-zi-lee/magpie-doubao-translate#v0.1.0`。
 更新时在 Magpie 中更新插件，或运行 `magpie plugin update`。
 
 ## 从本地主项目构建
