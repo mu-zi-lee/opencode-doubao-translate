@@ -55,10 +55,12 @@ magpie plugin login doubao-translate
 ```
 
 The GitHub distribution repository includes the built plugin and its runtime dependencies. No Node.js development environment, Docker, or additional build steps are required.
-To pin a version, use `github:mu-zi-lee/magpie-doubao-translate#v0.1.1`.
+To pin a version, use `github:mu-zi-lee/magpie-doubao-translate#v0.1.2`.
 Update the plugin in Magpie or run `magpie plugin update`.
 
 v0.1.1 bundles a custom avatar icon. Magpie versions that support custom plugin icons display it in the provider list after installation or update. The plugin supplies the image inline through `auth.icon`, so local and remote installations need no separate image download. If the default icon remains after updating, disable and re-enable the plugin or restart Magpie.
+
+v0.1.2 refreshes the avatar with a losslessly compressed PNG, preserving the original dimensions and image data.
 
 ## Build from the Local Main Project
 

@@ -55,10 +55,12 @@ magpie plugin login doubao-translate
 ```
 
 GitHub 发布仓库包含已构建的插件和运行时依赖，无须 Node.js 开发环境、Docker 或额外构建步骤。
-固定版本时填写 `github:mu-zi-lee/magpie-doubao-translate#v0.1.1`。
+固定版本时填写 `github:mu-zi-lee/magpie-doubao-translate#v0.1.2`。
 更新时在 Magpie 中更新插件，或运行 `magpie plugin update`。
 
 v0.1.1 随插件打包头像图标，安装或更新后，支持自定义插件图标的 Magpie 会在供应商列表显示。图标通过 `auth.icon` 内嵌提供，本机和远端安装均无须另行下载图片；若更新后仍显示默认图标，可关闭再开启插件或重启 Magpie。
+
+v0.1.2 更新为新的头像图标，并提供无损压缩的 PNG，保留原图尺寸和像素内容。
 
 ## 从本地主项目构建
 
