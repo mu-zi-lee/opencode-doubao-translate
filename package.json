@@ -1,5 +1,5 @@
 {
-  "name": "opencode-doubao-translate",
+  "name": "magpie-doubao-translate",
   "version": "0.1.0",
   "description": "Doubao web translation provider for Magpie and OpenCode",
   "type": "module",
