@@ -55,8 +55,10 @@ magpie plugin login doubao-translate
 ```
 
 The GitHub distribution repository includes the built plugin and its runtime dependencies. No Node.js development environment, Docker, or additional build steps are required.
-To pin a version, use `github:mu-zi-lee/magpie-doubao-translate#v0.1.0`.
+To pin a version, use `github:mu-zi-lee/magpie-doubao-translate#v0.1.1`.
 Update the plugin in Magpie or run `magpie plugin update`.
+
+v0.1.1 bundles a custom avatar icon. Magpie versions that support custom plugin icons display it in the provider list after installation or update. The plugin supplies the image inline through `auth.icon`, so local and remote installations need no separate image download. If the default icon remains after updating, disable and re-enable the plugin or restart Magpie.
 
 ## Build from the Local Main Project
 
@@ -103,7 +105,7 @@ The plugin does not save source text, translated text, or separate statistics fi
 Set these values in the plugin's `options` configuration in Magpie, or use the CLI:
 
 ```sh
-magpie plugin options opencode-doubao-translate '{"targetLang":"en","maxConcurrency":4}'
+magpie plugin options magpie-doubao-translate '{"targetLang":"en","maxConcurrency":4}'
 ```
 
 | Option | Default | Description |

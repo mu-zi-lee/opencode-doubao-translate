@@ -20754,6 +20754,8 @@ var DoubaoTranslatePlugin = async (_input, rawOptions) => {
   const parsed = optionsSchema.safeParse(rawOptions ?? {});
   if (!parsed.success) throw new Error("Invalid Doubao plugin options: " + parsed.error.issues.map((issue2) => issue2.path.join(".") || "options").join(", "));
   const options = parsed.data;
+  // Ship the icon inline so local and remote Magpie installs can display it immediately.
+  const icon = "data:image/png;base64," + (await readFile(new URL("../assets/icon-magpie.png", import.meta.url))).toString("base64");
   const config2 = loadConfig({
     ADMIN_ENABLED: "false",
     ALLOW_NO_AUTH: "true",
@@ -20804,6 +20806,7 @@ var DoubaoTranslatePlugin = async (_input, rawOptions) => {
     },
     auth: {
       provider: PROVIDER,
+      icon,
       maxConcurrency: options.maxConcurrency,
       methods: [{
         // The host's custom login flow can save a key without asking for a second API key.

@@ -1,6 +1,6 @@
 {
   "name": "magpie-doubao-translate",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Doubao web translation provider for Magpie and OpenCode",
   "type": "module",
   "main": "./dist/index.mjs",
@@ -8,16 +8,19 @@
     ".": "./dist/index.mjs",
     "./server": "./dist/index.mjs"
   },
-  "files": ["dist/index.mjs", "README.md", "LICENSE", "THIRD_PARTY_LICENSES.txt"],
+  "files": ["dist/index.mjs", "assets/icon-magpie.png", "README.md", "README.en.md", "LICENSE", "THIRD_PARTY_LICENSES.txt"],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mu-zi-lee/opencode-doubao-translate.git"
+    "url": "git+https://github.com/mu-zi-lee/magpie-doubao-translate.git"
   },
-  "homepage": "https://github.com/mu-zi-lee/opencode-doubao-translate#readme",
+  "homepage": "https://github.com/mu-zi-lee/magpie-doubao-translate#readme",
   "bugs": {
-    "url": "https://github.com/mu-zi-lee/opencode-doubao-translate/issues"
+    "url": "https://github.com/mu-zi-lee/magpie-doubao-translate/issues"
   },
   "keywords": ["opencode", "opencode-plugin", "magpie", "doubao", "translation"],
   "license": "MIT",
-  "magpie": { "maxConcurrency": 4 }
+  "magpie": {
+    "icon": "https://raw.githubusercontent.com/mu-zi-lee/magpie-doubao-translate/v0.1.1/assets/icon-magpie.png",
+    "maxConcurrency": 4
+  }
 }
